@@ -128,13 +128,16 @@ h1.display, .display-strong {
   line-height: 0.95;
 }
 
+/* Outlined words are always set in caps */
 .outline-text {
   -webkit-text-stroke: 1.5px var(--fg);
   color: transparent;
+  text-transform: uppercase;
 }
 .outline-text-accent {
   -webkit-text-stroke: 1.5px var(--blue);
   color: transparent;
+  text-transform: uppercase;
 }
 
 .text-gradient {
