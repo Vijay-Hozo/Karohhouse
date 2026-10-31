@@ -61,9 +61,9 @@ export function TradeForm() {
       <div className="relative z-10 mx-auto grid max-w-7xl gap-14 px-5 sm:px-6 lg:grid-cols-[1fr_1fr]">
         <div>
           <Eyebrow>06 · Trade account</Eyebrow>
-          <AnimatedTitle className="mt-6 text-5xl sm:text-6xl lg:text-7xl" lines={["Open a", "*wholesale* account"]} />
+          <AnimatedTitle className="mt-6 text-4xl sm:text-5xl lg:text-6xl" lines={["Open a", "*wholesale* account"]} />
           <Reveal delay={0.3}>
-            <p className="mt-6 max-w-md text-base text-bg/70 sm:text-lg">
+            <p className="mt-6 max-w-md text-sm text-bg/70 sm:text-base">
               Tell us about your business and expected volumes. Every application is qualified
               within 24 hours and followed by the catalogue, pricing and a sample pack offer.
             </p>
@@ -78,7 +78,7 @@ export function TradeForm() {
               ].map(([k, v]) => (
                 <div key={k}>
                   <dt className="text-[10px] uppercase tracking-[0.3em] text-bg/50">{k}</dt>
-                  <dd className="display mt-1 text-2xl">{v}</dd>
+                  <dd className="display mt-1 text-xl">{v}</dd>
                 </div>
               ))}
             </dl>
@@ -103,7 +103,7 @@ export function TradeForm() {
                 className="flex min-h-[520px] flex-col items-center justify-center rounded-[2rem] border border-bg/15 p-10 text-center"
               >
                 <CheckCircle2 className="h-14 w-14 text-sky" />
-                <h3 className="display mt-6 text-3xl">Application received</h3>
+                <h3 className="display mt-6 text-2xl">Application received</h3>
                 <p className="mt-3 max-w-sm text-sm text-bg/70">
                   Thank you. The Karoh House team will review your details and respond within 24 hours.
                 </p>

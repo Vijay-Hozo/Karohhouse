@@ -98,7 +98,7 @@ export function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   onClick={() => setOpen(false)}
-                  className="display py-2 text-3xl"
+                  className="display py-2 text-2xl"
                 >
                   {l.label}
                 </motion.a>

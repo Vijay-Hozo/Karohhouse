@@ -77,7 +77,7 @@ export function Hero() {
               </motion.div>
 
               <h1
-                className="display text-[12.5vw] leading-[0.9] sm:text-[9vw] lg:text-[5.6vw]"
+                className="display text-[9.5vw] sm:text-[7vw] lg:text-[4.4vw]"
                 style={{ perspective: 1000 }}
               >
                 <span className="flex flex-wrap gap-x-[0.2em]">
@@ -117,7 +117,7 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9, duration: 0.8 }}
-                className="mt-8 max-w-md text-base leading-relaxed text-fg-muted sm:text-lg"
+                className="mt-8 max-w-md text-sm leading-relaxed text-fg-muted sm:text-base"
               >
                 Karoh House takes Lattafa, Afnan, Armaf and Rasasi to wholesale buyers beyond
                 their home markets, with an AI layer that makes sourcing, compliance and selling
@@ -160,7 +160,7 @@ export function Hero() {
                     <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-cyan-2">
                       Now shipping
                     </p>
-                    <p className="display mt-1 text-2xl">Lattafa · Khamrah</p>
+                    <p className="display mt-1 text-xl">Lattafa · Khamrah</p>
                   </div>
                   <span className="flex items-center gap-1.5 rounded-full bg-bg/90 px-3 py-1.5 text-[11px] font-semibold text-fg">
                     <ShieldCheck className="h-3.5 w-3.5 text-sky" /> Batch verified

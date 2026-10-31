@@ -25,7 +25,7 @@ export function Process() {
         <Eyebrow>04 · How it works</Eyebrow>
         <div className="mt-6 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <AnimatedTitle
-            className="text-5xl sm:text-6xl lg:text-7xl"
+            className="text-4xl sm:text-5xl lg:text-6xl"
             lines={["Enquiry to dispatch", "in *five* steps"]}
           />
           <p className="max-w-sm text-sm text-fg-muted sm:text-base">
@@ -46,7 +46,7 @@ export function Process() {
               <StepCard key={s.n} s={s} i={i} />
             ))}
             <div className="flex w-[28rem] flex-none items-center justify-center rounded-[2rem] border border-dashed border-line-strong">
-              <a href="#apply" className="display text-4xl text-fg-muted transition hover:text-blue">
+              <a href="#apply" className="display text-3xl text-fg-muted transition hover:text-blue">
                 Start →
               </a>
             </div>
@@ -78,8 +78,8 @@ function StepCard({ s, i }: { s: (typeof steps)[number]; i: number }) {
     >
       <div className={`absolute -right-10 -top-10 h-44 w-44 rounded-full blur-3xl transition-transform duration-700 group-hover:scale-150 ${dark ? "bg-cyan/50" : "bg-blue/25"}`} />
       <div className="relative">
-        <span className={`display text-7xl ${dark ? "text-bg/15" : "text-fg/10"}`}>{s.n}</span>
-        <h3 className="display mt-2 text-3xl sm:text-4xl">{s.title}</h3>
+        <span className={`display text-6xl ${dark ? "text-bg/15" : "text-fg/10"}`}>{s.n}</span>
+        <h3 className="display mt-2 text-2xl sm:text-3xl">{s.title}</h3>
         <p className={`mt-4 text-sm leading-relaxed sm:text-base ${dark ? "text-bg/70" : "text-fg-muted"}`}>{s.body}</p>
       </div>
       <div className={`relative rounded-2xl p-4 ${dark ? "bg-bg/10" : "bg-bg-2"}`}>

@@ -63,7 +63,8 @@
   --color-cyan-2: var(--cyan-2);
   --color-sky: var(--sky);
   --color-sky-2: var(--sky-2);
-  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
   --animate-marquee: marquee 40s linear infinite;
   --animate-marquee-rev: marquee-rev 48s linear infinite;
@@ -103,6 +104,7 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01", "ss03";
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.5s ease, color 0.5s ease;
   overflow-x: clip;
@@ -111,11 +113,19 @@ body {
 ::selection { background: var(--sky); color: var(--on-accent); }
 
 /* Display headline utility: heavy, tight, uppercase */
+/* Display headings, after pally.com: Inter, tight negative tracking, sentence case.
+   Section headings sit at 600, the hero and large statements at 700. */
 .display {
-  font-weight: 800;
+  font-family: var(--font-display);
+  font-weight: 600;
   letter-spacing: -0.04em;
-  line-height: 0.92;
-  text-transform: uppercase;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+h1.display, .display-strong {
+  font-weight: 700;
+  letter-spacing: -0.048em;
+  line-height: 0.95;
 }
 
 .outline-text {
@@ -128,7 +138,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(95deg, var(--blue) 0%, var(--cyan) 60%, var(--sky-2) 100%);
+  background: linear-gradient(95deg, var(--blue) 0%, var(--cyan) 60%, var(--sky) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

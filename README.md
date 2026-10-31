@@ -7,7 +7,7 @@ Marketing site for Karoh House, a Middle Eastern fragrance distribution venture 
 - Next.js 16 (App Router) with Bun
 - Tailwind CSS v4
 - Motion (framer-motion successor) for animations
-- Poppins via next/font
+- Inter via next/font, with pally.com-style tight-tracked headings
 
 ## Run
 
@@ -35,7 +35,7 @@ with brand photography when available.
 
 ## Structure
 
-- `src/app/layout.tsx` loads Poppins and site metadata
+- `src/app/layout.tsx` loads Inter and site metadata
 - `src/app/globals.css` holds the palette tokens (oud, sand, cream, gold, amber, plum) and keyframes
 - `src/components/` holds one file per section: Navbar, Hero, Stats, Platform, Wholesale, Buyers, Process, Operations, TradeForm, Footer
 

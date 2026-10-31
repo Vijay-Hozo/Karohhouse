@@ -68,9 +68,9 @@ export function Buyers() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <Eyebrow>03 · Who we serve</Eyebrow>
         <div className="mt-6 grid gap-10 lg:grid-cols-2 lg:items-end">
-          <AnimatedTitle className="text-5xl sm:text-6xl lg:text-7xl" lines={["Four buyer types,", "_one_ *offer*"]} />
+          <AnimatedTitle className="text-4xl sm:text-5xl lg:text-6xl" lines={["Four buyer types,", "_one_ *offer*"]} />
           <Reveal delay={0.3}>
-            <p className="max-w-md text-base text-fg-muted sm:text-lg lg:ml-auto">
+            <p className="max-w-md text-sm text-fg-muted sm:text-base lg:ml-auto">
               Wholesale covers several buyer types with different needs. We start with one or two
               per market and expand from there. Hover or tap to explore.
             </p>
@@ -93,7 +93,7 @@ export function Buyers() {
                       <motion.span
                         animate={{ x: on ? 12 : 0 }}
                         transition={{ type: "spring", stiffness: 300, damping: 26 }}
-                        className={`display block text-2xl transition-colors sm:text-3xl ${on ? "text-fg" : "text-fg-muted group-hover:text-fg"}`}
+                        className={`display block text-xl transition-colors sm:text-2xl ${on ? "text-fg" : "text-fg-muted group-hover:text-fg"}`}
                       >
                         {b.name}
                       </motion.span>
@@ -143,7 +143,7 @@ export function Buyers() {
                   <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.3em] text-white/60">
                     {current.regions}
                   </p>
-                  <h3 className="display mt-3 text-3xl sm:text-4xl">{current.headline}</h3>
+                  <h3 className="display mt-3 text-2xl sm:text-3xl">{current.headline}</h3>
                   <ul className="mt-auto grid gap-2 pt-8 sm:grid-cols-2">
                     {current.points.map((p, i) => (
                       <motion.li

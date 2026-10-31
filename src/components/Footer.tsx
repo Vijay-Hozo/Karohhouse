@@ -49,8 +49,8 @@ export function Footer() {
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         className="mt-10 select-none overflow-hidden px-2 leading-none"
       >
-        <p className="display group text-center text-[21vw] tracking-[-0.06em] text-transparent [-webkit-text-stroke:1.5px_var(--line-strong)] transition-colors duration-700 hover:text-fg hover:[-webkit-text-stroke:0px]">
-          KAROH
+        <p className="display display-strong group text-center text-[15vw] tracking-[-0.04em] text-transparent [-webkit-text-stroke:1.5px_var(--line-strong)] transition-colors duration-700 hover:text-fg hover:[-webkit-text-stroke:0px]">
+          Karoh House
         </p>
       </motion.div>
     </footer>

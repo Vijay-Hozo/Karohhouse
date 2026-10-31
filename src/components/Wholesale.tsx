@@ -33,7 +33,7 @@ export function Wholesale() {
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow className="justify-center">02 · The wholesale offer</Eyebrow>
           <AnimatedTitle
-            className="mt-6 text-5xl sm:text-6xl lg:text-7xl [&>span]:justify-center"
+            className="mt-6 text-4xl sm:text-5xl lg:text-6xl [&>span]:justify-center"
             lines={["Enquiries convert when", "*what do I get?* is clear"]}
           />
         </div>
@@ -59,7 +59,7 @@ export function Wholesale() {
                 <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-sky">
                   Built before the outreach
                 </p>
-                <h3 className="display mt-4 text-4xl sm:text-5xl">One documented package. Every buyer.</h3>
+                <h3 className="display display-strong mt-4 text-3xl sm:text-4xl">One documented package. Every buyer.</h3>
                 <p className="mt-5 max-w-sm text-sm text-bg/70 sm:text-base">
                   Qualification and quoting take hours, not weeks, because the answer to every
                   buyer&apos;s first four questions is already written down.

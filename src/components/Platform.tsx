@@ -24,12 +24,12 @@ export function Platform() {
           <div>
             <Eyebrow>01 · The AI platform</Eyebrow>
             <AnimatedTitle
-              className="mt-6 text-5xl sm:text-6xl lg:text-7xl"
+              className="mt-6 text-4xl sm:text-5xl lg:text-6xl"
               lines={["From reseller to", "*distribution* _platform_"]}
             />
           </div>
           <Reveal delay={0.3}>
-            <p className="max-w-md text-base leading-relaxed text-fg-muted sm:text-lg lg:ml-auto">
+            <p className="max-w-md text-sm leading-relaxed text-fg-muted sm:text-base lg:ml-auto">
               Most perfume distributors are manual and relationship-driven. Karoh&apos;s AI layer
               makes market entry, compliance and wholesale selling cheap and repeatable.
             </p>
@@ -45,7 +45,7 @@ export function Platform() {
                 <div className="flex flex-col justify-between gap-10 p-8 sm:p-10">
                   <div>
                     <Tag icon={BarChart3}>Demand and assortment intelligence</Tag>
-                    <h3 className="display mt-5 text-3xl sm:text-4xl">
+                    <h3 className="display mt-5 text-2xl sm:text-3xl">
                       Know which SKUs to import <span className="text-blue">before</span> you
                       commit capital
                     </h3>
@@ -80,7 +80,7 @@ export function Platform() {
           <Reveal delay={0.1} className="md:col-span-2">
             <TiltCard className="p-7">
               <Tag icon={ClipboardCheck}>Compliance automation</Tag>
-              <h3 className="mt-4 text-xl font-semibold leading-snug">
+              <h3 className="mt-4 text-lg font-semibold leading-snug">
                 Every country launch becomes a checklist, not a research project.
               </h3>
               <ul className="mt-5 space-y-2 text-xs text-fg-muted">
@@ -122,7 +122,7 @@ export function Platform() {
                   <Tag icon={Wand2} light>
                     Discovery assistant
                   </Tag>
-                  <h3 className="mt-3 text-xl font-semibold leading-snug">
+                  <h3 className="mt-3 text-lg font-semibold leading-snug">
                     &ldquo;Something like Baccarat Rouge, but for a warm evening.&rdquo;
                   </h3>
                   <div className="mt-4 flex flex-wrap gap-2">
@@ -143,7 +143,7 @@ export function Platform() {
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <Tag icon={Send}>B2B outreach · built on Monsoon</Tag>
-                  <h3 className="mt-4 text-xl font-semibold leading-snug">
+                  <h3 className="mt-4 text-lg font-semibold leading-snug">
                     Company names in. Verified decision makers out, routed to WhatsApp, email or
                     LinkedIn.
                   </h3>
@@ -179,7 +179,7 @@ export function Platform() {
                   <Tag icon={Boxes} light>
                     Operations
                   </Tag>
-                  <h3 className="display mt-4 text-3xl">
+                  <h3 className="display mt-4 text-2xl">
                     Forecast. Reorder. <span className="text-sky">Onboard.</span>
                   </h3>
                   <p className="mt-3 text-sm text-bg/70">
