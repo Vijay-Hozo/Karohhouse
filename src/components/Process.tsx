@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion } from "motion/react";
 import { AnimatedTitle, Eyebrow } from "./fx/AnimatedTitle";
 
 const steps = [
@@ -13,52 +12,52 @@ const steps = [
 ];
 
 export function Process() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
-  // Horizontal scroll: translate the track as the tall section scrolls.
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-72%"]);
-  const progress = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-
   return (
-    <section id="process" className="bg-bg">
-      <div className="mx-auto max-w-7xl px-5 pt-28 sm:px-6 sm:pt-36">
+    <section id="process" className="relative overflow-hidden bg-bg">
+      <div className="absolute left-1/2 top-20 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-blue/10 blur-[130px]" />
+      <div className="relative mx-auto max-w-7xl px-5 pt-28 sm:px-6 sm:pt-36">
         <Eyebrow>04 · How it works</Eyebrow>
         <div className="mt-6 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <AnimatedTitle
-            className="text-4xl sm:text-5xl lg:text-6xl"
+            className="max-w-3xl text-4xl sm:text-5xl lg:text-7xl"
             lines={["Enquiry to dispatch", "in *five* steps"]}
           />
-          <p className="max-w-sm text-sm text-fg-muted sm:text-base">
+          <p className="max-w-md text-sm leading-relaxed text-fg-muted sm:text-base">
             Keep scrolling. The AI layer drafts replies, auto-quotes from the price sheet and
             chases stalled leads so nothing goes cold.
           </p>
         </div>
       </div>
 
-      {/* Desktop: pinned horizontal scroll */}
-      <div ref={ref} className="relative hidden h-[320vh] lg:block">
-        <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
-          <div className="mx-auto mb-8 h-px w-full max-w-7xl bg-line px-6">
-            <motion.div style={{ width: progress }} className="h-px bg-gradient-to-r from-blue via-cyan to-sky" />
-          </div>
-          <motion.div style={{ x }} className="flex gap-6 pl-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))]">
-            {steps.map((s, i) => (
-              <StepCard key={s.n} s={s} i={i} />
-            ))}
-            <div className="flex w-[28rem] flex-none items-center justify-center rounded-[2rem] border border-dashed border-line-strong">
-              <a href="#apply" className="display text-3xl text-fg-muted transition hover:text-blue">
-                Start →
-              </a>
-            </div>
-          </motion.div>
+      <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-16">
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          whileInView={{ opacity: 1, scaleX: 1 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-8 flex origin-left items-center gap-4"
+        >
+          <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-fg-muted">Workflow</span>
+          <div className="h-px flex-1 bg-gradient-to-r from-blue via-cyan to-transparent" />
+          <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-fg-muted">Dispatch</span>
+        </motion.div>
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          {steps.map((s, i) => (
+            <StepCard key={s.n} s={s} i={i} />
+          ))}
+          <motion.a
+            href="#apply"
+            initial={{ opacity: 0, y: 44 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="group flex min-h-56 items-center justify-center rounded-[2rem] border border-dashed border-line-strong bg-surface/40 p-8 text-center transition hover:border-blue hover:bg-blue/5 sm:min-h-0"
+          >
+            <span className="display text-2xl text-fg-muted transition group-hover:text-blue sm:text-3xl">
+              Start your workflow <span className="text-blue">→</span>
+            </span>
+          </motion.a>
         </div>
-      </div>
-
-      {/* Mobile: vertical stack */}
-      <div className="mx-auto grid max-w-7xl gap-4 px-5 py-14 sm:grid-cols-2 lg:hidden">
-        {steps.map((s, i) => (
-          <StepCard key={s.n} s={s} i={i} />
-        ))}
       </div>
     </section>
   );
@@ -68,23 +67,32 @@ function StepCard({ s, i }: { s: (typeof steps)[number]; i: number }) {
   const dark = i % 2 === 1;
   return (
     <motion.article
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.7, delay: i * 0.05 }}
-      className={`group relative flex h-[26rem] w-full flex-none flex-col justify-between overflow-hidden rounded-[2rem] border p-8 lg:w-[30rem] ${
+      initial={{ opacity: 0, y: 44, rotateX: 8 }}
+      whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+      style={{ transformPerspective: 900 }}
+      className={`group relative flex min-h-[27rem] w-full flex-col justify-between overflow-hidden rounded-[2rem] border p-7 shadow-[0_24px_70px_-45px_var(--glow)] transition-transform duration-500 hover:-translate-y-2 sm:p-8 ${
         dark ? "border-transparent bg-fg text-bg" : "border-line bg-surface"
       }`}
     >
-      <div className={`absolute -right-10 -top-10 h-44 w-44 rounded-full blur-3xl transition-transform duration-700 group-hover:scale-150 ${dark ? "bg-cyan/50" : "bg-blue/25"}`} />
+      <div className={`absolute -right-10 -top-10 h-52 w-52 rounded-full blur-3xl transition-transform duration-700 group-hover:scale-150 ${dark ? "bg-cyan/40" : "bg-blue/20"}`} />
       <div className="relative">
-        <span className={`display text-6xl ${dark ? "text-bg/15" : "text-fg/10"}`}>{s.n}</span>
-        <h3 className="display mt-2 text-2xl sm:text-3xl">{s.title}</h3>
+        <div className="flex items-start justify-between">
+          <span className={`display text-7xl leading-none ${dark ? "text-bg/15" : "text-fg/10"}`}>{s.n}</span>
+          <span className={`rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] ${dark ? "border-bg/15 text-bg/55" : "border-line text-fg-muted"}`}>
+            Step {i + 1}
+          </span>
+        </div>
+        <h3 className="display mt-5 text-2xl sm:text-3xl">{s.title}</h3>
         <p className={`mt-4 text-sm leading-relaxed sm:text-base ${dark ? "text-bg/70" : "text-fg-muted"}`}>{s.body}</p>
       </div>
-      <div className={`relative rounded-2xl p-4 ${dark ? "bg-bg/10" : "bg-bg-2"}`}>
-        <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-blue">AI layer</p>
-        <p className="mt-1 text-sm">{s.ai}</p>
+      <div className={`relative rounded-2xl border p-4 ${dark ? "border-bg/10 bg-bg/10" : "border-line bg-bg-2"}`}>
+        <div className="flex items-center gap-2">
+          <span className="h-1.5 w-1.5 rounded-full bg-sky shadow-[0_0_12px_var(--sky)]" />
+          <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-blue">AI layer</p>
+        </div>
+        <p className="mt-2 text-sm leading-relaxed">{s.ai}</p>
       </div>
     </motion.article>
   );

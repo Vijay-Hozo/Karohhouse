@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
+import { Catalog } from "@/components/Catalog";
 import { Platform } from "@/components/Platform";
 import { Wholesale } from "@/components/Wholesale";
 import { Buyers } from "@/components/Buyers";
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Marquee />
+      <Catalog />
       <Platform />
       <Wholesale />
       <Buyers />

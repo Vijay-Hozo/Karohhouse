@@ -34,7 +34,7 @@ export function Wholesale() {
           <Eyebrow className="justify-center">02 · The wholesale offer</Eyebrow>
           <AnimatedTitle
             className="mt-6 text-4xl sm:text-5xl lg:text-6xl [&>span]:justify-center"
-            lines={["Enquiries convert when", "*what do I get?* is clear"]}
+            lines={["Enquiries convert when", "what do I get? is clear"]}
           />
         </div>
 
@@ -73,16 +73,24 @@ export function Wholesale() {
               <ul className="grid gap-3 sm:grid-cols-2">
                 {offer.map((o, i) => (
                   <Reveal key={o.n} delay={0.1 + i * 0.08}>
-                    <li className="group h-full rounded-3xl border border-bg/15 bg-bg/5 p-6 backdrop-blur-md transition-colors hover:bg-bg/10">
+                    <motion.li
+                      whileHover={{ y: -5 }}
+                      transition={{ type: "spring", stiffness: 280, damping: 22 }}
+                      className="group relative h-full overflow-hidden rounded-3xl border border-bg/15 bg-bg/[0.06] p-6 backdrop-blur-md transition-[border-color,background-color,box-shadow] duration-300 hover:border-sky/40 hover:bg-bg/[0.11] hover:shadow-[0_18px_45px_-30px_var(--sky)]"
+                    >
+                      <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-sky/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                       <div className="flex items-center justify-between">
-                        <o.icon className="h-5 w-5 text-cyan-2" />
-                        <span className="display text-2xl text-bg/30 transition-colors group-hover:text-sky">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-2xl border border-blue/25 bg-blue/10 shadow-[inset_0_0_0_1px_var(--line)] transition-colors group-hover:border-sky/50 group-hover:bg-sky/15">
+                          <o.icon className="h-5 w-5 text-sky drop-shadow-[0_0_8px_var(--glow)] transition-colors group-hover:text-cyan-2" strokeWidth={2.25} />
+                        </span>
+                        <span className="display text-3xl text-bg/25 transition-colors group-hover:text-sky">
                           {o.n}
                         </span>
                       </div>
-                      <h4 className="mt-5 text-base font-semibold">{o.title}</h4>
-                      <p className="mt-2 text-sm text-bg/65">{o.body}</p>
-                    </li>
+                      <h4 className="mt-6 text-base font-semibold tracking-tight">{o.title}</h4>
+                      <p className="mt-2 text-sm leading-relaxed text-bg/65">{o.body}</p>
+                      <span className="mt-5 block h-1 w-8 rounded-full bg-sky/60 transition-all duration-300 group-hover:w-14 group-hover:bg-sky" />
+                    </motion.li>
                   </Reveal>
                 ))}
               </ul>

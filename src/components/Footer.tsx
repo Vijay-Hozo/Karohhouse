@@ -49,8 +49,15 @@ export function Footer() {
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         className="mt-10 select-none overflow-hidden px-2 leading-none"
       >
-        <p className="wordmark group text-center text-[17vw] leading-none text-transparent [-webkit-text-stroke:1.5px_var(--line-strong)] transition-colors duration-700 hover:text-fg hover:[-webkit-text-stroke:0px]">
-          Karoh
+        <p className="wordmark text-center text-[17vw] leading-none text-transparent [-webkit-text-stroke:1.5px_var(--line-strong)]">
+          {"Karoh".split("").map((character, index) => (
+            <span
+              key={`${character}-${index}`}
+              className="inline-block transition-[color,-webkit-text-stroke] duration-300 hover:text-fg hover:[-webkit-text-stroke:0px]"
+            >
+              {character}
+            </span>
+          ))}
         </p>
       </motion.div>
     </footer>
